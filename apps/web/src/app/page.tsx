@@ -1,4 +1,5 @@
-"use client";
+import Image from "next/image";
+import { structuredData } from "@/lib/metadata";
 
 export default function Home() {
 	return (
@@ -7,94 +8,23 @@ export default function Home() {
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "MarketingAgency",
-						"name": "Handlebars",
-						"description": "Boutique offline marketing agency for fast-growing startups specializing in radio, podcast, TV, OOH, and influencer campaigns",
-						"url": "https://www.handlebars.co",
-						"logo": "https://www.handlebars.co/logo.png",
-						"sameAs": [
-							"https://twitter.com/handlebarsco"
-						],
-						"address": {
-							"@type": "PostalAddress",
-							"addressCountry": "US"
-						},
-						"serviceArea": {
-							"@type": "Country",
-							"name": "United States"
-						},
-						"knowsAbout": [
-							"Radio Advertising",
-							"Podcast Advertising",
-							"TV Advertising",
-							"Out-of-Home Advertising",
-							"Influencer Marketing",
-							"Marketing Attribution",
-							"Growth Marketing"
-						],
-						"hasOfferCatalog": {
-							"@type": "OfferCatalog",
-							"name": "Marketing Services",
-							"itemListElement": [
-								{
-									"@type": "Offer",
-									"itemOffered": {
-										"@type": "Service",
-										"name": "Radio Advertising",
-										"description": "Strategic radio campaign planning and attribution"
-									}
-								},
-								{
-									"@type": "Offer",
-									"itemOffered": {
-										"@type": "Service",
-										"name": "Podcast Advertising",
-										"description": "Targeted podcast sponsorship and host-read ads"
-									}
-								},
-								{
-									"@type": "Offer",
-									"itemOffered": {
-										"@type": "Service",
-										"name": "TV Advertising",
-										"description": "Television campaign planning and execution"
-									}
-								},
-								{
-									"@type": "Offer",
-									"itemOffered": {
-										"@type": "Service",
-										"name": "Out-of-Home Advertising",
-										"description": "Billboard and outdoor advertising campaigns"
-									}
-								},
-								{
-									"@type": "Offer",
-									"itemOffered": {
-										"@type": "Service",
-										"name": "Influencer Marketing",
-										"description": "Strategic influencer partnerships and campaigns"
-									}
-								}
-							]
-						}
-					})
+					__html: JSON.stringify(structuredData)
 				}}
 			/>
 
 			<div className="relative min-h-screen w-full overflow-hidden">
 				{/* Background Image */}
-				<div
-					className="absolute inset-0 z-0"
-					style={{
-						backgroundImage: `url('https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=3432&auto=format&fit=crop')`,
-						backgroundSize: 'cover',
-						backgroundPosition: 'center',
-						filter: 'brightness(0.7)'
-					}}
-				/>
+				<div className="absolute inset-0 z-0">
+					<Image
+						src="/hero-background.webp"
+						alt="Marketing strategy background"
+						fill
+						priority
+						sizes="100vw"
+						quality={85}
+						className="object-cover brightness-[0.7]"
+					/>
+				</div>
 
 				{/* Content Container */}
 				<div className="relative z-10 flex min-h-screen items-center justify-center px-4 py-8 sm:px-6 lg:px-8">
@@ -142,10 +72,13 @@ export default function Home() {
 									className="cursor-pointer transition-opacity hover:opacity-70"
 									aria-label="Visit Rugiet website"
 								>
-									<img
+									<Image
 										src="/logo-rugiet.webp"
 										alt="Rugiet - Partner of Handlebars Marketing Agency"
+										width={301}
+										height={59}
 										className="h-8 sm:h-9 md:h-10 w-auto brightness-0 invert"
+										quality={100}
 										loading="lazy"
 									/>
 								</a>

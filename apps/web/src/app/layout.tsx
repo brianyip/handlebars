@@ -25,6 +25,15 @@ export const metadata: Metadata = {
 	alternates: {
 		canonical: "https://www.handlebars.co",
 	},
+	manifest: "/manifest.json",
+	icons: {
+		icon: [
+			{ url: "/icon.svg", type: "image/svg+xml" },
+		],
+		apple: [
+			{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+		],
+	},
 	openGraph: {
 		title: "Handlebars | Your Offline Marketing Partner",
 		description: "Boutique offline marketing agency specializing in radio, podcast, TV, OOH, and influencer campaigns. Test faster and achieve better results.",
@@ -62,6 +71,11 @@ export const metadata: Metadata = {
 	},
 	verification: {
 		google: "google-site-verification-code",
+	},
+	other: {
+		"apple-mobile-web-app-capable": "yes",
+		"apple-mobile-web-app-status-bar-style": "black-translucent",
+		"format-detection": "telephone=no",
 	},
 };
 
